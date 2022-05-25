@@ -1,6 +1,7 @@
 # Mario made with [PyGame](https://www.pygame.org)
 
-This is a simple project to NSI . To see more, get the official pygame news [here](https://www.pygame.org).
+This is a simple project to NSI in collaboration with Magnier Hugo
+To see more, get the official pygame news [here](https://www.pygame.org).
 
 
 
