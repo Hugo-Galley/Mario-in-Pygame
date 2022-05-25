@@ -14,9 +14,11 @@ This is a simple project to NSI . To see more, get the official pygame news [her
 
 ![Title screen](/assets/Images/backgrounds/bg.png)
 
-![Level 2](/assets/Images/backgrounds/background_level2.jpg)
+---
 
-![Level 3](/assets/Images/backgrounds/background_level3.jpg)
+![Level 2](/assets/Images/backgrounds/background_level2.webp)
+
+
 
 
 ---
