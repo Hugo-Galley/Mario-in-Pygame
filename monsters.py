@@ -18,7 +18,9 @@ class Monster(animation.AnimateSprite):
         self.rect = self.image.get_rect()
         self.rect.x = 720 - randint(0, 20)
 
-    def remove(self):
+    def remove(self, sound=None):
+        if sound is not None:
+            sound.play()
         self.game.all_monsters.remove(self)
 
     def forward(self):
@@ -46,13 +48,12 @@ class Goomba(Monster):
     def __init__(self, game):
         super().__init__(game, "goomba")
         self.rect.y = 385
-        self.channel = pygame.mixer.Channel(0)
         self.sound = pygame.mixer.Sound("assets/Sound_effects/death_Sound.mp3")
 
     def damage(self, amount, death=False):
 
         if death:
-            self.remove()
+            self.remove(self.sound)
             self.game.kill += 1
             self.game.spawn_monster()
             return
@@ -61,7 +62,7 @@ class Goomba(Monster):
 
         if self.health <= 0:
             self.sound.play()
-            self.remove()
+            self.remove(self.sound)
             self.game.kill += 1
             self.game.spawn_monster()
         
@@ -77,7 +78,7 @@ class BobOmb(Monster):
     def damage(self, amount, death=False):
 
         if death:
-            self.remove()
+            self.remove(self.sound)
             self.game.kill += 1
             self.game.spawn_monster()
             return
@@ -103,9 +104,10 @@ class Koopa(Monster):
 
     def __init__(self, game):
         super().__init__(game, self.get_koopa_color(game), have_animation=True, spe_chara=True)
+        self.rect.y = 430
         self.have_armor = True
         self.color = self.get_koopa_color(game)
-        self.rect.y = 430
+        self.sound = pygame.mixer.Sound("assets/Sound_effects/death_Sound2.mp3")
 
     def get_koopa_color(self, game):
         colors = ["YellowKoopa", "BlueKoopa", "RedKoopa"]
@@ -115,7 +117,7 @@ class Koopa(Monster):
     def damage(self, amount=0, death=False):
 
         if death:
-            self.remove()
+            self.remove(self.sound)
             self.game.kill += 1
             self.game.spawn_monster()
             return
@@ -128,7 +130,7 @@ class Koopa(Monster):
         self.health -= amount
 
         if self.health <= 0:
-            self.remove()
+            self.remove(self.sound)
             self.game.kill += 1
             self.game.spawn_monster()
 
