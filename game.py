@@ -2,8 +2,7 @@
 import random
 import pygame
 
-from monster2 import Monster2
-from monster import Monster
+from monsters import *
 from player import Player
 
 
@@ -15,16 +14,14 @@ class Game:
         self.is_paused = False
         self.is_playing = False
         self.music_play = False
+        self.lvl = 1
         self.all_players = pygame.sprite.Group()
         self.player = Player(self)
-        self.monster = Monster(self)
-        self.monster2 = Monster2(self)
         self.all_players.add(self.player)
         self.all_monsters = pygame.sprite.Group()
         self.pressed = {}
         self.kill = 1
         self.kill_init = 1
-        self.level = 1
 
     def pause_menu(self, screen):
         # Applliquer l'image du joueur
@@ -54,9 +51,8 @@ class Game:
         pygame.mixer.music.unload()
         self.music_play = False
 
-    # lance le jeux avec les paramètres par défault en fonction du niveaux
+    # lance le jeux avec les paramètres par défault
     def start(self):
-
         self.is_paused = False
         self.is_playing = True
         self.game_state = 1
@@ -65,16 +61,6 @@ class Game:
         self.pressed = {}
         self.player.rect.x = 0
         self.spawn_monster()
-
-        if self.level == 2:
-            self.monster.velocity_init += 2
-            self.monster2.velocity_init += 2
-        elif self.level == 3:
-            self.monster.velocity_init += 4
-            self.monster2.velocity_init += 4
-
-
-        print("C'est le niveaux = ",self.level)
 
     # vérifie les interractions avec le jeu
     def update(self, screen):
@@ -87,7 +73,12 @@ class Game:
 
         # faire bouger les ennemis
         for monster in self.all_monsters:
-            monster.forward()
+
+            if monster.is_alive:
+                monster.forward()
+
+            else:
+                monster.sound_status()
 
         # dessiné à l'écran les ennemis et projectiles
         self.player.all_projectiles.draw(screen)
@@ -145,7 +136,8 @@ class Game:
     def spawn_monster(self):
         if self.kill <= 5:
             for i in range(self.kill):
-                monster = Monster(self)
-                monster2 = Monster2(self)
-                liste = [monster, monster2]
+                monster = Goomba(self)
+                monster2 = BobOmb(self)
+                monster3 = Koopa(self)
+                liste = [monster, monster2, monster3]
                 self.all_monsters.add(random.choice(liste))
