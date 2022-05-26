@@ -20,32 +20,32 @@ font = pygame.image.load('assets/Images/font.png')
 font_menu = pygame.image.load('assets/Images/font_image(1).png')
 
 # charger nos boutons
-play_button = pygame.image.load('assets/Images/play_button.png')
+play_button = pygame.image.load('assets/Images/buttons/play_button.png')
 play_button_rect = play_button.get_rect()
 play_button_rect.x = 350
 play_button_rect.y = 150
 
-replay_button = pygame.image.load('assets/Images/replay_button.png')
+replay_button = pygame.image.load('assets/Images/buttons/replay_button.png')
 replay_button_rect = replay_button.get_rect()
 replay_button_rect.x = 350
 replay_button_rect.y = 250
 
-exit_button = pygame.image.load('assets/Images/exit_button.png')
+exit_button = pygame.image.load('assets/Images/buttons/exit_button.png')
 exit_button_rect = exit_button.get_rect()
 exit_button_rect.x = 350
 exit_button_rect.y = 340
 
-level_1 = pygame.image.load('assets/Images/sign.png')
+level_1 = pygame.image.load('assets/Images/buttons/sign.png')
 level_1_rect = level_1.get_rect()
 level_1_rect.x = 220
 level_1_rect.y = 373
 
-level_2 = pygame.image.load('assets/Images/level.png')
+level_2 = pygame.image.load('assets/Images/buttons/level.png')
 level_2_rect = level_2.get_rect()
 level_2_rect.x = 380
 level_2_rect.y = 373
 
-level_3 = pygame.image.load('assets/Images/sign(1).png')
+level_3 = pygame.image.load('assets/Images/buttons/sign(1).png')
 level_3_rect = level_3.get_rect()
 level_3_rect.x = 530
 level_3_rect.y = 373
