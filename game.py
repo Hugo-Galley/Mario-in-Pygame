@@ -76,6 +76,7 @@ class Game:
 
             if monster.is_alive:
                 monster.forward()
+                monster.update_animation()
 
             else:
                 monster.sound_status()
