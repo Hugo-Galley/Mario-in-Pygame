@@ -15,11 +15,6 @@ To see more, get the official pygame news [here](https://www.pygame.org).
 
 ![Title screen](/assets/Images/backgrounds/bg.png)
 
----
-
-![Level 2](/assets/Images/backgrounds/background_level2.jpg)
-
-
 
 
 ---
