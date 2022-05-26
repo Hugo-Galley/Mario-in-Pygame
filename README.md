@@ -19,4 +19,4 @@ To see more, get the official pygame news [here](https://www.pygame.org).
 
 ---
 
-#### Made with Hugo Galley ,TheShadowGhost745: by [@Hugo-Galley](https://github.com/Hugo-Galley) [@TheShadowGhost745](https://github.com/heShadowGhost745)
+#### Made with Hugo Galley ,TheShadowGhost745: by [@Hugo-Galley](https://github.com/Hugo-Galley) [@TheShadowGhost745](https://github.com/TheShadowGhost745)
