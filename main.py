@@ -50,6 +50,8 @@ level_3_rect = level_3.get_rect()
 level_3_rect.x = 530
 level_3_rect.y = 373
 
+credit_icon = pygame.image.load('assets/Images/Credits/sign(1).png')
+
 # charger notre jeu
 game = Game()
 
@@ -57,7 +59,7 @@ running = True
 game.game_state = 1
 
 while running:
-    if game.is_playing:
+    if game.is_playing == 1:
 
         if game.game_state == 1:
 
@@ -101,12 +103,12 @@ while running:
 
                         elif exit_button_rect.collidepoint(event.pos):
                             # retourné au menu
-                            game.is_playing = False
+                            game.is_playing = 2
                             game.is_paused = False
                             game.remove_sprite()
                             game.stop_music()
 
-            else:
+            elif game.is_playing == 2:
 
                 # vérifier les interraction du joueur avec le jeux
                 game.update(screen)
@@ -154,6 +156,7 @@ while running:
         screen.blit(level_2, level_2_rect)
         screen.blit(level_3, level_3_rect)
         screen.blit(font_menu, (16, 20))
+        screen.blit(cre)
     for event in pygame.event.get():
 
         if event.type == pygame.QUIT:

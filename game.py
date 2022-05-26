@@ -12,7 +12,7 @@ class Game:
     def __init__(self):
         self.game_state = 1
         self.is_paused = False
-        self.is_playing = False
+        self.is_playing = 2
         self.music_play = False
         self.lvl = 1
         self.all_players = pygame.sprite.Group()
@@ -54,7 +54,7 @@ class Game:
     # lance le jeux avec les paramètres par défault
     def start(self):
         self.is_paused = False
-        self.is_playing = True
+        self.is_playing = 1
         self.game_state = 1
         self.stop_music()
         self.kill = self.kill_init
@@ -125,7 +125,7 @@ class Game:
         for event in pygame.event.get():
 
             if event.type == pygame.QUIT:
-                self.is_playing = False
+                self.is_playing = 2
                 self.remove_sprite()
                 self.stop_music()
 
