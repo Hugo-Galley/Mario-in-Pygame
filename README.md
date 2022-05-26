@@ -1,6 +1,6 @@
 # Mario made with [PyGame](https://www.pygame.org)
 
-This is a simple project to NSI in collaboration with Magnier Hugo
+This is a simple project to NSI in collaboration with TheShadowGhost745
 To see more, get the official pygame news [here](https://www.pygame.org).
 
 
@@ -19,4 +19,4 @@ To see more, get the official pygame news [here](https://www.pygame.org).
 
 ---
 
-#### Made with Hugo Galley , Magnier Hugo: by [@Hugo-Galley,@Magnier_Hugo](https://github.com/Hugo-Galley)
+#### Made with Hugo Galley ,TheShadowGhost745: by [@Hugo-Galley](https://github.com/Hugo-Galley) [@TheShadowGhost745](https://github.com/heShadowGhost745)
