@@ -27,7 +27,7 @@ class Projectile(pygame.sprite.Sprite):
 class FireBall(Projectile):
 
     def __init__(self, player):
-        super().__init__(player, 1, 'assets/Images/sprites/fireball.png')
+        super().__init__(player, 1, 'assets/Images/sprites/projectiles/fireball.png')
         self.sound = pygame.mixer.Sound("assets/Sound_effects/fireball_Sound.mp3")
 
     def move(self):
@@ -41,7 +41,7 @@ class FireBall(Projectile):
                 self.remove()
 
                 # infliger des dégats au monstre
-                monster.damage(self.damage)
+                monster.damage(amount=self.damage)
 
         # verifier si projectile plus present sur ecran
         if self.rect.x > 966:
@@ -53,7 +53,7 @@ class FireBall(Projectile):
 class Knife(Projectile):
 
     def __init__(self, player):
-        super().__init__(player, None, 'assets/Images/sprites/knife (1).png')
+        super().__init__(player, None, 'assets/Images/sprites/projectiles/knife (1).png')
         self.sound = pygame.mixer.Sound("assets/Sound_effects/gun_Sound.mp3")
 
     def move(self):
@@ -63,7 +63,7 @@ class Knife(Projectile):
         # verifier si le projectile entre en colision avec un monstre :
         for monster in self.player.game.check_collision(self, self.player.game.all_monsters):
             # supprimer monstre
-            monster.remove()
+            monster.damage(death=True)
 
         # verifier si projectile plus present sur ecran
         if self.rect.x > 1080:
