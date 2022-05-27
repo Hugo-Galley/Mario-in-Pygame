@@ -20,6 +20,14 @@ Then launch the "main.py" to run the game
 ### Screenshots
 
 ![Title screen](/assets/Images/backgrounds/bg.png)
+---
+
+### Player and Monster
+
+![Player](/assets/Images/sprites/mario.png)
+![Monster](/assets/Images/sprites/goomba.png)
+![Player](/assets/Images/sprites/bob_omb.png)
+![Monster](/assets/Images/sprites/RedKoopa/RedKoopa1.png)
 
 
 
