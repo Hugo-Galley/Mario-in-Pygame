@@ -1,3 +1,7 @@
+#lien Github du projet : https://github.com/Hugo-Galley/Mario-in-Pygame
+# Co-crée par Hugo Galley et Hugo Magnier et Abdessami Ali-moussa
+
+
 import pygame
 from game import Game
 pygame.init()

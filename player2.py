@@ -1,6 +1,4 @@
 import pygame
-
-import projectiles
 from projectiles import *
 
 
