@@ -1,4 +1,4 @@
-#lien Github du projet : https://github.com/Hugo-Galley/Mario-in-Pygame
+# lien Github du projet : https://github.com/Hugo-Galley/Mario-in-Pygame
 # Co-crée par Hugo Galley et Hugo Magnier et Abdessami Ali-moussa
 
 
@@ -8,7 +8,7 @@ pygame.init()
 pygame.mixer.init()
 
 clock = pygame.time.Clock()
-FPS = 60
+FPS = 90
 
 # creer la fenêtre
 pygame.display.set_caption("Mario vs Monster")
@@ -81,7 +81,8 @@ running = True
 game.game_state = 1
 
 while running:
-    if game.is_playing and game.credit == False:
+
+    if game.is_playing and not game.credit:
 
         if game.game_state == 1:
 
@@ -92,6 +93,7 @@ while running:
                 screen.blit(background_level2, (0, -40))
             elif game.lvl == 3:
                 screen.blit(background_level3, (0, 0))
+
             screen.blit(font, (200, 0))
 
             if game.is_paused:
@@ -172,15 +174,16 @@ while running:
             screen.blit(loose_background, (0, 0))
             # vérifier les interractions avec la fenêtre
             game.scene_update()
-    elif game.is_playing == False and game.credit == False:
+
+    elif not game.is_playing and not game.credit:
         screen.blit(background, (0, 0))
         screen.blit(level_1, level_1_rect)
         screen.blit(level_2, level_2_rect)
         screen.blit(level_3, level_3_rect)
         screen.blit(font_menu, (16, 20))
-        screen.blit(choice_perso,(60,120))
+        screen.blit(choice_perso, (60, 120))
         screen.blit(credit_icon, credit_icon_rect)
-        screen.blit(mario,mario_rect)
+        screen.blit(mario, mario_rect)
         screen.blit(toad, toad_rect)
 
 
@@ -205,6 +208,7 @@ while running:
                 elif level_3_rect.collidepoint(event.pos):
                     game.lvl = 3
                     game.start()
+
                 elif credit_icon_rect.collidepoint(event.pos):
                     game.credit = True
 
@@ -215,9 +219,9 @@ while running:
                     game.choice_player = False
 
 
-    if game.is_playing == False and game.credit== True :
-        screen.blit(background,(0, 0))
-        screen.blit(credit_dev, (30,30))
+    elif not game.is_playing and game.credit:
+        screen.blit(background, (0, 0))
+        screen.blit(credit_dev, (30, 30))
 
         for event in pygame.event.get():
 
@@ -227,6 +231,6 @@ while running:
 
     # vérifier que le jeu est toujours en marche avant d'update l'écran pour éviter les erreurs
     if running:
-        pygame.display.flip()
 
+        pygame.display.flip()
         clock.tick(FPS)
