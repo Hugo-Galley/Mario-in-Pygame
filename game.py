@@ -24,7 +24,7 @@ class Game:
         self.kill = 1
         self.kill_init = 1
         self.credit = False
-        self.choice_player = 1
+        self.choice_player = True
 
 
     def pause_menu(self, screen):
@@ -65,10 +65,10 @@ class Game:
         self.pressed = {}
         self.player.rect.x = 0
         self.spawn_monster()
-        if self.choice_player == 1:
+        if self.choice_player:
             self.player = Player(self)
             print("joueur 1")
-        elif self.choice_player == 2 :
+        else :
             self.player = Player2(self)
             print("joueur 2")
 

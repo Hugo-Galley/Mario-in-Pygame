@@ -58,7 +58,7 @@ level_3_rect.y = 373
 credit_icon = pygame.image.load('assets/Images/credits/crédits_icon.png')
 credit_icon_rect = credit_icon.get_rect()
 credit_icon_rect.x = 320
-credit_icon_rect.y = 200
+credit_icon_rect.y = 250
 
 mario = pygame.image.load('assets/Images/sprites/mario.png')
 mario_rect = mario.get_rect()
@@ -174,7 +174,7 @@ while running:
         screen.blit(level_2, level_2_rect)
         screen.blit(level_3, level_3_rect)
         screen.blit(font_menu, (16, 20))
-        screen.blit(choice_perso,(35,100))
+        screen.blit(choice_perso,(35,120))
         screen.blit(credit_icon, credit_icon_rect)
         screen.blit(mario,mario_rect)
         screen.blit(toad, toad_rect)
@@ -205,10 +205,10 @@ while running:
                     game.credit = True
 
                 elif mario_rect.collidepoint(event.pos):
-                    game.choice_player = 1
+                    game.choice_player = True
 
                 elif toad_rect.collidepoint(event.pos):
-                    game.choice_player = 2
+                    game.choice_player = False
 
 
     if game.is_playing == False and game.credit== True :
