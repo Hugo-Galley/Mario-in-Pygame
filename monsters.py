@@ -50,7 +50,7 @@ class Goomba(Monster):
         self.rect.y = 385
         self.sound = pygame.mixer.Sound("assets/Sound_effects/death_Sound.mp3")
 
-    def damage(self, amount, death=False):
+    def damage(self, amount=0, death=False):
 
         if death:
             self.remove(self.sound)
@@ -75,7 +75,7 @@ class BobOmb(Monster):
         self.channel = pygame.mixer.Channel(1)
         self.sound = pygame.mixer.Sound("assets/Sound_effects/explosion_Sound.wav")
 
-    def damage(self, amount, death=False):
+    def damage(self, amount=0, death=False):
 
         if death:
             self.remove(self.sound)

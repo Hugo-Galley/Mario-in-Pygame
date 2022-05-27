@@ -89,7 +89,7 @@ while running:
             if game.lvl == 1:
                 screen.blit(background, (0, 0))
             elif game.lvl == 2:
-                screen.blit(background_level2, (0, -35))
+                screen.blit(background_level2, (0, -40))
             elif game.lvl == 3:
                 screen.blit(background_level3, (0, 0))
             screen.blit(font, (200, 0))
@@ -229,4 +229,4 @@ while running:
     if running:
         pygame.display.flip()
 
-    clock.tick(FPS)
+        clock.tick(FPS)

@@ -3,8 +3,7 @@ import random
 import pygame
 
 from monsters import *
-from player import Player
-from player2 import Player2
+from player import *
 
 
 class Game:
@@ -17,7 +16,7 @@ class Game:
         self.music_play = False
         self.lvl = 1
         self.all_players = pygame.sprite.Group()
-        self.player = Player(self)
+        self.player = Mario(self)
         self.all_players.add(self.player)
         self.all_monsters = pygame.sprite.Group()
         self.pressed = {}
@@ -66,10 +65,10 @@ class Game:
         self.player.rect.x = 0
         self.spawn_monster()
         if self.choice_player:
-            self.player = Player(self)
+            self.player = Mario(self)
             print("joueur 1")
         else :
-            self.player = Player2(self)
+            self.player = Toad(self)
             print("joueur 2")
 
     # vérifie les interractions avec le jeu

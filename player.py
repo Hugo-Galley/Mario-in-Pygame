@@ -1,21 +1,18 @@
 import pygame
+
+import animation
 from projectiles import *
 
 
-class Player(pygame.sprite.Sprite):
+class Player(animation.AnimateSprite):
 
-    def __init__(self, game):
-        super().__init__()
+    def __init__(self, game, sprite_name):
+        super().__init__(sprite_name)
         self.game = game
-        self.health = 100
-        self.max_health = 100
-        self.attack = 10
         self.velocity = 5
         self.all_projectiles = pygame.sprite.Group()
-        self.image = pygame.image.load('assets/Images/sprites/mario.png')
         self.rect = self.image.get_rect()
         self.rect.x = 0
-        self.rect.y = 450
 
     def launch_projectile(self, cheat_on=False):
         # crée une nouvelle instance de la classe projectile
@@ -35,3 +32,17 @@ class Player(pygame.sprite.Sprite):
 
     def move_left(self):
         self.rect.x -= self.velocity
+
+
+class Mario(Player):
+
+    def __init__(self, game):
+        super().__init__(game, "mario")
+        self.rect.y = 450
+
+
+class Toad(Player):
+
+    def __init__(self, game):
+        super().__init__(game, "toad")
+        self.rect.y = 430
