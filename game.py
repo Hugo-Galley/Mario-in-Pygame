@@ -65,9 +65,9 @@ class Game:
         self.player.rect.x = 0
         self.spawn_monster()
         if self.choice_player:
-            self.player = Mario(self)
+            self.player = Luigi(self)
             print("joueur 1")
-        else :
+        else:
             self.player = Toad(self)
             print("joueur 2")
 
@@ -75,6 +75,9 @@ class Game:
     def update(self, screen):
         # Applliquer l'image du joueur
         screen.blit(self.player.image, self.player.rect)
+
+        # actiualiser l'animation du joueur
+        self.player.update_animation()
 
         # Faire bouger les projectiles
         for projectile in self.player.all_projectiles:
