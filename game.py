@@ -65,7 +65,7 @@ class Game:
         self.player.rect.x = 0
         self.spawn_monster()
         if self.choice_player:
-            self.player = Luigi(self)
+            self.player = Mario(self)
             print("joueur 1")
         else:
             self.player = Toad(self)
