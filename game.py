@@ -4,6 +4,7 @@ import pygame
 
 from monsters import *
 from player import Player
+from player2 import Player2
 
 
 class Game:
@@ -23,6 +24,7 @@ class Game:
         self.kill = 1
         self.kill_init = 1
         self.credit = False
+        self.choice_player = 1
 
 
     def pause_menu(self, screen):
@@ -63,6 +65,12 @@ class Game:
         self.pressed = {}
         self.player.rect.x = 0
         self.spawn_monster()
+        if self.choice_player == 1:
+            self.player = Player(self)
+            print("joueur 1")
+        elif self.choice_player == 2 :
+            self.player = Player2(self)
+            print("joueur 2")
 
     # vérifie les interractions avec le jeu
     def update(self, screen):

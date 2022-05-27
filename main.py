@@ -1,6 +1,5 @@
 import pygame
 from game import Game
-
 pygame.init()
 pygame.mixer.init()
 
@@ -22,6 +21,8 @@ loose_background = pygame.image.load('assets/Images/backgrounds/gameover (1).jpg
 font = pygame.image.load('assets/Images/font.png')
 font_menu = pygame.image.load('assets/Images/font_image(1).png')
 credit_dev = pygame.image.load('assets/Images/credits/credits.png')
+choice_perso = pygame.image.load('assets/Images/sprites/choice_perso.png')
+
 
 # charger nos boutons
 play_button = pygame.image.load('assets/Images/buttons/play_button.png')
@@ -58,6 +59,16 @@ credit_icon = pygame.image.load('assets/Images/credits/crédits_icon.png')
 credit_icon_rect = credit_icon.get_rect()
 credit_icon_rect.x = 320
 credit_icon_rect.y = 200
+
+mario = pygame.image.load('assets/Images/sprites/mario.png')
+mario_rect = mario.get_rect()
+mario_rect.x = 100
+mario_rect.y = 450
+
+toad = pygame.image.load('assets/Images/sprites/toad.png')
+toad_rect = toad.get_rect()
+toad_rect.x = 750
+toad_rect.y = 430
 
 # charger notre jeu
 game = Game()
@@ -163,7 +174,11 @@ while running:
         screen.blit(level_2, level_2_rect)
         screen.blit(level_3, level_3_rect)
         screen.blit(font_menu, (16, 20))
+        screen.blit(choice_perso,(35,100))
         screen.blit(credit_icon, credit_icon_rect)
+        screen.blit(mario,mario_rect)
+        screen.blit(toad, toad_rect)
+
 
         for event in pygame.event.get():
 
@@ -188,6 +203,12 @@ while running:
                     game.start()
                 elif credit_icon_rect.collidepoint(event.pos):
                     game.credit = True
+
+                elif mario_rect.collidepoint(event.pos):
+                    game.choice_player = 1
+
+                elif toad_rect.collidepoint(event.pos):
+                    game.choice_player = 2
 
 
     if game.is_playing == False and game.credit== True :
