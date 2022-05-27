@@ -12,7 +12,7 @@ class Projectile(pygame.sprite.Sprite):
         self.origine_image = self.image
         self.rect = self.image.get_rect()
         self.rect.x = player.rect.x + 20
-        self.rect.y = player.rect.y - 10
+        self.rect.y = player.rect.y
         self.angle = 0
 
     def rotate(self):
