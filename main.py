@@ -4,6 +4,9 @@ from game import Game
 pygame.init()
 pygame.mixer.init()
 
+clock = pygame.time.Clock()
+FPS = 60
+
 # creer la fenêtre
 pygame.display.set_caption("Mario vs Goumba")
 screen = pygame.display.set_mode((933, 600))
@@ -62,11 +65,11 @@ while running:
         if game.game_state == 1:
 
             # afficher le background sur l'écran
-            if game.lvl == 1 :
+            if game.lvl == 1:
                 screen.blit(background, (0, 0))
-            elif game.lvl == 2 :
+            elif game.lvl == 2:
                 screen.blit(background_level2, (0, -35))
-            elif game.lvl == 3 :
+            elif game.lvl == 3:
                 screen.blit(background_level3, (0, 0))
             screen.blit(font, (200, 0))
 
@@ -179,3 +182,5 @@ while running:
     # vérifier que le jeu est toujours en marche avant d'update l'écran pour éviter les erreurs
     if running:
         pygame.display.flip()
+
+    clock.tick(FPS)
