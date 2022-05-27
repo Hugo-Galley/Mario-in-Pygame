@@ -5,8 +5,8 @@ from random import randint
 
 class Monster(animation.AnimateSprite):
 
-    def __init__(self, game, sprite_name, have_animation=False, spe_chara=False):
-        super().__init__(sprite_name)
+    def __init__(self, game, sprite_name, image_number=0, have_animation=False, spe_chara=False):
+        super().__init__(sprite_name, image_number)
         self.game = game
         self.is_alive = True
         self.have_animation = have_animation
@@ -29,7 +29,7 @@ class Monster(animation.AnimateSprite):
 
     def update_animation(self):
         if self.have_animation:
-            self.animate()
+            self.animate(loop=True)
 
     def get_chara(self):
 
@@ -103,7 +103,7 @@ class BobOmb(Monster):
 class Koopa(Monster):
 
     def __init__(self, game):
-        super().__init__(game, self.get_koopa_color(game), have_animation=True, spe_chara=True)
+        super().__init__(game, self.get_koopa_color(game), image_number=2, have_animation=True, spe_chara=True)
         self.rect.y = 430
         self.have_armor = True
         self.color = self.get_koopa_color(game)
