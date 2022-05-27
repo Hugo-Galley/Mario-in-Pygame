@@ -34,7 +34,7 @@ class Monster(animation.AnimateSprite):
     def get_chara(self):
 
         if not self.spe_chara:
-            lvl_chara = [[randint(1, 3), 1], [randint(2, 4), 1], [randint(3, 5), 2]]
+            lvl_chara = [[randint(1, 3), 1], [randint(3, 5), 1], [randint(4, 6), 2]]
             lvl = self.game.lvl - 1
             return lvl_chara[lvl]
 
