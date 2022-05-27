@@ -174,7 +174,7 @@ while running:
         screen.blit(level_2, level_2_rect)
         screen.blit(level_3, level_3_rect)
         screen.blit(font_menu, (16, 20))
-        screen.blit(choice_perso,(35,120))
+        screen.blit(choice_perso,(60,120))
         screen.blit(credit_icon, credit_icon_rect)
         screen.blit(mario,mario_rect)
         screen.blit(toad, toad_rect)
