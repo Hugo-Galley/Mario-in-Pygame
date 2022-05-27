@@ -4,8 +4,11 @@ from game import Game
 pygame.init()
 pygame.mixer.init()
 
+clock = pygame.time.Clock()
+FPS = 60
+
 # creer la fenêtre
-pygame.display.set_caption("Mario vs Goumba")
+pygame.display.set_caption("Mario vs Monster")
 screen = pygame.display.set_mode((933, 600))
 pygame_icon = pygame.image.load('assets/Images/icone.png')
 pygame.display.set_icon(pygame_icon)
@@ -18,6 +21,7 @@ win_background = pygame.image.load('assets/Images/backgrounds/win-(1).jpeg')
 loose_background = pygame.image.load('assets/Images/backgrounds/gameover (1).jpg')
 font = pygame.image.load('assets/Images/font.png')
 font_menu = pygame.image.load('assets/Images/font_image(1).png')
+credit_dev = pygame.image.load('assets/Images/credits/credits.png')
 
 # charger nos boutons
 play_button = pygame.image.load('assets/Images/buttons/play_button.png')
@@ -50,7 +54,10 @@ level_3_rect = level_3.get_rect()
 level_3_rect.x = 530
 level_3_rect.y = 373
 
-credit_icon = pygame.image.load('assets/Images/Credits/sign(1).png')
+credit_icon = pygame.image.load('assets/Images/credits/crédits_icon.png')
+credit_icon_rect = credit_icon.get_rect()
+credit_icon_rect.x = 320
+credit_icon_rect.y = 200
 
 # charger notre jeu
 game = Game()
@@ -59,16 +66,16 @@ running = True
 game.game_state = 1
 
 while running:
-    if game.is_playing == 1:
+    if game.is_playing and game.credit == False:
 
         if game.game_state == 1:
 
             # afficher le background sur l'écran
-            if game.lvl == 1 :
+            if game.lvl == 1:
                 screen.blit(background, (0, 0))
-            elif game.lvl == 2 :
+            elif game.lvl == 2:
                 screen.blit(background_level2, (0, -35))
-            elif game.lvl == 3 :
+            elif game.lvl == 3:
                 screen.blit(background_level3, (0, 0))
             screen.blit(font, (200, 0))
 
@@ -103,12 +110,12 @@ while running:
 
                         elif exit_button_rect.collidepoint(event.pos):
                             # retourné au menu
-                            game.is_playing = 2
+                            game.is_playing = False
                             game.is_paused = False
                             game.remove_sprite()
                             game.stop_music()
 
-            elif game.is_playing == 2:
+            else:
 
                 # vérifier les interraction du joueur avec le jeux
                 game.update(screen)
@@ -150,35 +157,51 @@ while running:
             screen.blit(loose_background, (0, 0))
             # vérifier les interractions avec la fenêtre
             game.scene_update()
-    else:
+    elif game.is_playing == False and game.credit == False:
         screen.blit(background, (0, 0))
         screen.blit(level_1, level_1_rect)
         screen.blit(level_2, level_2_rect)
         screen.blit(level_3, level_3_rect)
         screen.blit(font_menu, (16, 20))
-        screen.blit(cre)
-    for event in pygame.event.get():
+        screen.blit(credit_icon, credit_icon_rect)
 
-        if event.type == pygame.QUIT:
-            running = False
-            pygame.quit()
+        for event in pygame.event.get():
 
-        # si la souris est cliqué
-        elif event.type == pygame.MOUSEBUTTONDOWN:
+            if event.type == pygame.QUIT:
+                running = False
+                pygame.quit()
 
-            if level_1_rect.collidepoint(event.pos):
-                # relancé le jeu
-                game.lvl = 1
-                game.start()
+            # si la souris est cliqué
+            elif event.type == pygame.MOUSEBUTTONDOWN:
 
-            elif level_2_rect.collidepoint(event.pos):
-                game.lvl = 2
-                game.start()
+                if level_1_rect.collidepoint(event.pos):
+                    # relancé le jeu
+                    game.lvl = 1
+                    game.start()
 
-            elif level_3_rect.collidepoint(event.pos):
-                game.lvl = 3
-                game.start()
+                elif level_2_rect.collidepoint(event.pos):
+                    game.lvl = 2
+                    game.start()
+
+                elif level_3_rect.collidepoint(event.pos):
+                    game.lvl = 3
+                    game.start()
+                elif credit_icon_rect.collidepoint(event.pos):
+                    game.credit = True
+
+
+    if game.is_playing == False and game.credit== True :
+        screen.blit(background,(0, 0))
+        screen.blit(credit_dev, (30,30))
+
+        for event in pygame.event.get():
+
+            if event.type == pygame.QUIT:
+                game.credit = False
+
 
     # vérifier que le jeu est toujours en marche avant d'update l'écran pour éviter les erreurs
     if running:
         pygame.display.flip()
+
+    clock.tick(FPS)
