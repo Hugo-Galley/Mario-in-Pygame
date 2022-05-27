@@ -55,7 +55,7 @@ class Luigi(Player):
 
     def __init__(self, game):
         super().__init__(game, "luigi", image_number=3, have_animation=True)
-        self.rect.y = 390
+        self.rect.y = 415
 
 
 class Toad(Player):
