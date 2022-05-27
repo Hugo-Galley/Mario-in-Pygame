@@ -20,9 +20,17 @@ Then launch the "main.py" to run the game
 ### Screenshots
 
 ![Title screen](/assets/Images/backgrounds/bg.png)
+---
+
+### Player and Monster
+
+![Player](/assets/Images/sprites/mario.png)
+![Monster](/assets/Images/sprites/goomba.png)
+![Player](/assets/Images/sprites/bob_omb.png)
+![Monster](/assets/Images/sprites/RedKoopa/RedKoopa1.png)
 
 
 
 ---
 
-#### Made with Hugo Galley ,TheShadowGhost745: by [@Hugo-Galley](https://github.com/Hugo-Galley) [@TheShadowGhost745](https://github.com/TheShadowGhost745)
+#### Made with Daniel-Jack ,TheShadowGhost745: by [@Daniel-Jack](https://github.com/Hugo-Galley) [@TheShadowGhost745](https://github.com/TheShadowGhost745)
