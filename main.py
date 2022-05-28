@@ -1,4 +1,4 @@
-#lien Github du projet : https://github.com/Hugo-Galley/Mario-in-Pygame
+# lien Github du projet : https://github.com/Hugo-Galley/Mario-in-Pygame
 # Co-crée par Hugo Galley et Hugo Magnier et Abdessami Ali-moussa
 
 
@@ -8,7 +8,7 @@ pygame.init()
 pygame.mixer.init()
 
 clock = pygame.time.Clock()
-FPS = 60
+FPS = 90
 
 # creer la fenêtre
 pygame.display.set_caption("Mario vs Monster")
@@ -25,7 +25,7 @@ loose_background = pygame.image.load('assets/Images/backgrounds/gameover (1).jpg
 font = pygame.image.load('assets/Images/font.png')
 font_menu = pygame.image.load('assets/Images/font_image(1).png')
 credit_dev = pygame.image.load('assets/Images/credits/credits.png')
-choice_perso = pygame.image.load('assets/Images/sprites/choice_perso.png')
+
 
 
 # charger nos boutons
@@ -44,6 +44,7 @@ exit_button_rect = exit_button.get_rect()
 exit_button_rect.x = 350
 exit_button_rect.y = 340
 
+# Charger boutons de lvl
 level_1 = pygame.image.load('assets/Images/buttons/sign.png')
 level_1_rect = level_1.get_rect()
 level_1_rect.x = 220
@@ -64,16 +65,42 @@ credit_icon_rect = credit_icon.get_rect()
 credit_icon_rect.x = 320
 credit_icon_rect.y = 250
 
-mario = pygame.image.load('assets/Images/sprites/mario.png')
+#Charger les boutons de perso
+
+mario = pygame.image.load('assets/Images/sprites/mario2.png')
 mario_rect = mario.get_rect()
 mario_rect.x = 100
-mario_rect.y = 450
+mario_rect.y = 430
 
 toad = pygame.image.load('assets/Images/sprites/toad.png')
 toad_rect = toad.get_rect()
-toad_rect.x = 750
+toad_rect.x = 700
 toad_rect.y = 430
 
+waluigi = pygame.image.load('assets/Images/sprites/waluigi.png')
+waluigi_rect = waluigi.get_rect()
+waluigi_rect.x = 250
+waluigi_rect.y = 430
+
+warrio = pygame.image.load('assets/Images/sprites/wario.png')
+wario_rect = warrio.get_rect()
+wario_rect.x = 400
+wario_rect.y = 430
+
+luigi = pygame.image.load('assets/Images/sprites/luigi.png')
+luigi_rect = luigi.get_rect()
+luigi_rect.x = 550
+luigi_rect.y = 410
+
+choice_perso = pygame.image.load('assets/Images/sprites/choice_perso.png')
+choice_perso_rect = choice_perso.get_rect()
+choice_perso_rect.x = 60
+choice_perso_rect.y = 120
+
+choix_perso_menu = pygame.image.load('assets/Images/sprites/choix_perso_menu (1).png')
+choix_perso_menu_rect = choix_perso_menu.get_rect()
+choix_perso_menu_rect.x = 200
+choix_perso_menu_rect.y = 140
 # charger notre jeu
 game = Game()
 
@@ -81,7 +108,8 @@ running = True
 game.game_state = 1
 
 while running:
-    if game.is_playing and game.credit == False:
+
+    if game.is_playing and not game.credit and not game.menu_perso:
 
         if game.game_state == 1:
 
@@ -92,6 +120,7 @@ while running:
                 screen.blit(background_level2, (0, -40))
             elif game.lvl == 3:
                 screen.blit(background_level3, (0, 0))
+
             screen.blit(font, (200, 0))
 
             if game.is_paused:
@@ -172,16 +201,15 @@ while running:
             screen.blit(loose_background, (0, 0))
             # vérifier les interractions avec la fenêtre
             game.scene_update()
-    elif game.is_playing == False and game.credit == False:
+
+    elif not game.is_playing and not game.credit and not game.menu_perso:
         screen.blit(background, (0, 0))
         screen.blit(level_1, level_1_rect)
         screen.blit(level_2, level_2_rect)
         screen.blit(level_3, level_3_rect)
         screen.blit(font_menu, (16, 20))
-        screen.blit(choice_perso,(60,120))
+        screen.blit(choix_perso_menu,choix_perso_menu_rect)
         screen.blit(credit_icon, credit_icon_rect)
-        screen.blit(mario,mario_rect)
-        screen.blit(toad, toad_rect)
 
 
         for event in pygame.event.get():
@@ -205,28 +233,62 @@ while running:
                 elif level_3_rect.collidepoint(event.pos):
                     game.lvl = 3
                     game.start()
+
                 elif credit_icon_rect.collidepoint(event.pos):
                     game.credit = True
 
-                elif mario_rect.collidepoint(event.pos):
-                    game.choice_player = True
-
-                elif toad_rect.collidepoint(event.pos):
-                    game.choice_player = False
+                elif choix_perso_menu_rect.collidepoint(event.pos):
+                    game.menu_perso = True
+                    print("c'est cliquée")
 
 
-    if game.is_playing == False and game.credit== True :
-        screen.blit(background,(0, 0))
-        screen.blit(credit_dev, (30,30))
+    elif not game.is_playing and game.credit and game.menu_perso == False:
+        screen.blit(background, (0, 0))
+        screen.blit(credit_dev, (30, 30))
 
         for event in pygame.event.get():
 
             if event.type == pygame.QUIT:
                 game.credit = False
 
+    elif not game.is_playing and game.menu_perso and not game.credit:
+        # Chargé les fonds et les perso
+        screen.blit(background,(0, 0))
+        screen.blit(choice_perso, choice_perso_rect)
+        screen.blit(mario,mario_rect)
+        screen.blit(toad,toad_rect)
+        screen.blit(waluigi,waluigi_rect)
+        screen.blit(warrio,wario_rect)
+        screen.blit(luigi,luigi_rect)
+        for event in pygame.event.get():
+
+            if event.type == pygame.QUIT:
+                game.menu_perso = False
+
+            # Verifier sur qulle perso on clique
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if mario_rect.collidepoint(event.pos):
+                    game.choice_player = 1
+                    game.menu_perso = False
+
+                elif toad_rect.collidepoint(event.pos):
+                    game.choice_player = 2
+                    game.menu_perso = False
+
+                elif waluigi_rect.collidepoint(event.pos):
+                    game.choice_player = 3
+                    game.menu_perso = False
+
+                elif wario_rect.collidepoint(event.pos):
+                    game.choice_player = 4
+                    game.menu_perso = False
+
+                elif luigi_rect.collidepoint(event.pos):
+                    game.choice_player = 5
+                    game.menu_perso = False
 
     # vérifier que le jeu est toujours en marche avant d'update l'écran pour éviter les erreurs
     if running:
-        pygame.display.flip()
 
+        pygame.display.flip()
         clock.tick(FPS)

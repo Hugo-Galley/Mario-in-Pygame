@@ -23,7 +23,8 @@ class Game:
         self.kill = 1
         self.kill_init = 1
         self.credit = False
-        self.choice_player = True
+        self.choice_player = 1
+        self.menu_perso = False
 
 
     def pause_menu(self, screen):
@@ -64,17 +65,33 @@ class Game:
         self.pressed = {}
         self.player.rect.x = 0
         self.spawn_monster()
-        if self.choice_player:
+        if self.choice_player == 1:
             self.player = Mario(self)
-            print("joueur 1")
-        else :
+
+        elif self.choice_player == 2:
             self.player = Toad(self)
-            print("joueur 2")
+
+        elif self.choice_player == 3:
+            self.player = Waluigi(self)
+            self.player.rect.y -= 23
+
+        elif self.choice_player == 4:
+            self.player = Wario(self)
+            self.player.rect.y -= 20
+
+        elif self.choice_player == 5:
+            self.player = Luigi(self)
+
+
+
 
     # vérifie les interractions avec le jeu
     def update(self, screen):
         # Applliquer l'image du joueur
         screen.blit(self.player.image, self.player.rect)
+
+        # actiualiser l'animation du joueur
+        self.player.update_animation()
 
         # Faire bouger les projectiles
         for projectile in self.player.all_projectiles:
