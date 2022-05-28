@@ -68,10 +68,10 @@ class Waluigi(Player):
 
     def __init__(self,game):
         super().__init__(game, "waluigi")
-        self.rect.y = 450
+        self.rect.y = 427
 
 class Wario(Player):
 
     def __init__(self,game):
         super().__init__(game, "wario")
-        self.rect.y = 450
+        self.rect.y = 430
