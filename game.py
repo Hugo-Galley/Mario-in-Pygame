@@ -67,8 +67,13 @@ class Game:
         self.spawn_monster()
         if self.choice_player == 1:
             self.player = Mario(self)
+<<<<<<< HEAD
 
         elif self.choice_player == 2:
+=======
+            print("joueur 1")
+        else:
+>>>>>>> 1e69ec88523d6405be1d62f77847209fe46f7267
             self.player = Toad(self)
 
         elif self.choice_player == 3:

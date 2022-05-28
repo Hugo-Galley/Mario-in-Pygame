@@ -109,7 +109,11 @@ game.game_state = 1
 
 while running:
 
+<<<<<<< HEAD
     if game.is_playing and not game.credit and not game.menu_perso:
+=======
+    if game.is_playing and not game.credit:
+>>>>>>> 1e69ec88523d6405be1d62f77847209fe46f7267
 
         if game.game_state == 1:
 
@@ -202,14 +206,25 @@ while running:
             # vérifier les interractions avec la fenêtre
             game.scene_update()
 
+<<<<<<< HEAD
     elif not game.is_playing and not game.credit and not game.menu_perso:
+=======
+    elif not game.is_playing and not game.credit:
+>>>>>>> 1e69ec88523d6405be1d62f77847209fe46f7267
         screen.blit(background, (0, 0))
         screen.blit(level_1, level_1_rect)
         screen.blit(level_2, level_2_rect)
         screen.blit(level_3, level_3_rect)
         screen.blit(font_menu, (16, 20))
+<<<<<<< HEAD
         screen.blit(choix_perso_menu,choix_perso_menu_rect)
         screen.blit(credit_icon, credit_icon_rect)
+=======
+        screen.blit(choice_perso, (60, 120))
+        screen.blit(credit_icon, credit_icon_rect)
+        screen.blit(mario, mario_rect)
+        screen.blit(toad, toad_rect)
+>>>>>>> 1e69ec88523d6405be1d62f77847209fe46f7267
 
 
         for event in pygame.event.get():
@@ -242,7 +257,11 @@ while running:
                     print("c'est cliquée")
 
 
+<<<<<<< HEAD
     elif not game.is_playing and game.credit and game.menu_perso == False:
+=======
+    elif not game.is_playing and game.credit:
+>>>>>>> 1e69ec88523d6405be1d62f77847209fe46f7267
         screen.blit(background, (0, 0))
         screen.blit(credit_dev, (30, 30))
 
