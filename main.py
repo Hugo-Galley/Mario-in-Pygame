@@ -9,7 +9,6 @@ pygame.mixer.init()
 
 clock = pygame.time.Clock()
 FPS = 90
-
 # creer la fenêtre
 pygame.display.set_caption("Mario vs Monster")
 screen = pygame.display.set_mode((933, 600))
