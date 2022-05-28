@@ -26,6 +26,9 @@ Then launch the "main.py" to run the game
 
 ![Player](/assets/Images/sprites/mario.png)
 ![Player](/assets/Images/sprites/toad.png)
+![Player](/assets/Images/sprites/luigi.png)
+![Player](/assets/Images/sprites/waluigi.png)
+![Player](/assets/Images/sprites/wario.png)
 ![Monster](/assets/Images/sprites/goomba.png)
 ![Player](/assets/Images/sprites/bob_omb.png)
 ![Monster](/assets/Images/sprites/RedKoopa/RedKoopa1.png)
