@@ -24,7 +24,7 @@ Then launch the "main.py" to run the game
 
 ### Player and Monster
 
-![Player](/assets/Images/sprites/mario.png)
+![Player](/assets/Images/sprites/mario2.png)
 ![Player](/assets/Images/sprites/toad.png)
 ![Player](/assets/Images/sprites/luigi.png)
 ![Player](/assets/Images/sprites/waluigi.png)
