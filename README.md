@@ -37,4 +37,4 @@ Then launch the "main.py" to run the game
 
 ---
 
-#### Made with Daniel-Jack ,TheShadowGhost745: by [@Daniel-Jack](https://github.com/Hugo-Galley) [@TheShadowGhost745](https://github.com/TheShadowGhost745)
+#### Made with Daniel-Jack ,TheShadowGhost745: by [@Freaks](https://github.com/Hugo-Galley) [@TheShadowGhost745](https://github.com/TheShadowGhost745)
