@@ -242,14 +242,13 @@ while running:
 
                 elif choix_perso_menu_rect.collidepoint(event.pos):
                     game.menu_perso = True
-                    print("c'est cliquée")
 
 
 
     elif not game.is_playing and game.credit and game.menu_perso == False:
 
         screen.blit(background, (0, 0))
-        screen.blit(credit_dev, (30, 30))
+        screen.blit(credit_dev, (180, 100))
 
         for event in pygame.event.get():
 
