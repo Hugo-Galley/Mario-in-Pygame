@@ -1,40 +1,49 @@
-# Mario made with [PyGame](https://www.pygame.org)
+# Mario créé avec [PyGame](https://www.pygame.org)
 
-This is a simple project to NSI in collaboration with TheShadowGhost745
-To see more, get the official pygame news [here](https://www.pygame.org).
+Il s'agit d'un projet simple pour NSI en collaboration avec TheShadowGhost745.
+Pour en savoir plus, consultez les actualités officielles de Pygame [ici](https://www.pygame.org).
 
-
-
-## Running
+## Exécution
 
     $ git clone https://github.com/Hugo-Galley/Mario_in-Pygame
     $ cd projetMario
     $ python3 main.py
 
-### If you have Pycharm
-You can open Pycharm and add the full folder.
-Then launch the "main.py" to run the game
+## Prérequis
+
+Avant de continuer, assurez-vous d'avoir Python installé sur votre système. Vous pouvez télécharger Python depuis le site officiel : [https://www.python.org/downloads/](https://www.python.org/downloads).
+
+De plus, installez la bibliothèque Pygame en exécutant la commande suivante :
+
+```bash
+pip install pygame
+
+```
+
+
+### Si vous utilisez PyCharm
+Vous pouvez ouvrir PyCharm et ajouter le dossier complet.
+Ensuite, lancez "main.py" pour exécuter le jeu.
 
 ---
 
-### Screenshots
+### Captures d'écran
 
-![Title screen](/assets/Images/backgrounds/bg.png)
----
-
-### Player and Monster
-
-![Player](/assets/Images/sprites/mario2.png)
-![Player](/assets/Images/sprites/toad.png)
-![Player](/assets/Images/sprites/luigi.png)
-![Player](/assets/Images/sprites/waluigi.png)
-![Player](/assets/Images/sprites/wario.png)
-![Monster](/assets/Images/sprites/goomba.png)
-![Player](/assets/Images/sprites/bob_omb.png)
-![Monster](/assets/Images/sprites/RedKoopa/RedKoopa1.png)
-
-
+![Écran de titre](/assets/Images/backgrounds/bg.png)
 
 ---
 
-#### Made with Daniel-Jack ,TheShadowGhost745: by [@Freaks](https://github.com/Hugo-Galley) [@TheShadowGhost745](https://github.com/TheShadowGhost745)
+### Joueur et Monstre
+
+![Joueur](/assets/Images/sprites/mario2.png)
+![Joueur](/assets/Images/sprites/toad.png)
+![Joueur](/assets/Images/sprites/luigi.png)
+![Joueur](/assets/Images/sprites/waluigi.png)
+![Joueur](/assets/Images/sprites/wario.png)
+![Monstre](/assets/Images/sprites/goomba.png)
+![Joueur](/assets/Images/sprites/bob_omb.png)
+![Monstre](/assets/Images/sprites/RedKoopa/RedKoopa1.png)
+
+---
+
+#### Réalisé par [@Freaks](https://github.com/Hugo-Galley) [@TheShadowGhost745](https://github.com/TheShadowGhost745)
