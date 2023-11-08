@@ -3,11 +3,7 @@
 Il s'agit d'un projet simple pour NSI en collaboration avec TheShadowGhost745.
 Pour en savoir plus, consultez les actualités officielles de Pygame [ici](https://www.pygame.org).
 
-## Exécution
 
-    $ git clone https://github.com/Hugo-Galley/Mario_in-Pygame
-    $ cd projetMario
-    $ python3 main.py
 
 ## Prérequis
 
