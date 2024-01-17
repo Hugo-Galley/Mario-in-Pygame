@@ -1,6 +1,6 @@
 # Mario créé avec [PyGame](https://www.pygame.org)
 
-Il s'agit d'un projet simple pour NSI en collaboration avec TheShadowGhost745.
+Il s'agit d'un projet réalisé pour l cours de NSI en collaboration.
 Pour en savoir plus, consultez les actualités officielles de Pygame [ici](https://www.pygame.org).
 
 
@@ -17,9 +17,15 @@ pip install pygame
 ```
 
 
-### Si vous utilisez PyCharm
-Vous pouvez ouvrir PyCharm et ajouter le dossier complet.
-Ensuite, lancez "main.py" pour exécuter le jeu.
+### Lancement du jeux
+Pour éxecuter le jeux il vous suffit simplement de vous rendre dans le dossier du jeu.
+Puis ouvrir un terminal à cette endroit et executer la ligne de commande suivante : 
+
+```python
+python3 main.py
+
+```
+
 
 ---
 
@@ -29,7 +35,7 @@ Ensuite, lancez "main.py" pour exécuter le jeu.
 
 ---
 
-### Joueur et Monstre
+### Joueurs et Monstres
 
 ![Joueur](/assets/Images/sprites/mario2.png)
 ![Joueur](/assets/Images/sprites/toad.png)
